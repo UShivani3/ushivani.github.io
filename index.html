@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Upadhyay - Academic Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .nav {
+            margin: 20px 0;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav a {
+            color: #3498db;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .nav a.active {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .content-area {
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 20px;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid #f0f0f0;
+            background: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+            margin: 0 auto 25px;
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar h3 {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-info a:hover {
+            color: #2980b9;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-weight: 300;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .about-text {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .research-interests ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .research-interests li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .research-interests li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .research-interests strong {
+            color: #2c3e50;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .sidebar {
+                position: static;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .nav a {
+                display: inline-block;
+                margin-bottom: 5px;
+            }
+            
+            .sidebar {
+                padding: 20px;
+                text-align: center;
+            }
+            
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Shivani Upadhyay</h1>
+            <nav class="nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="publications.html">Publications</a>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="content-area">
+                <!-- <div class="section">
+                    <h2>About Me</h2>
+                    <p class="about-text">I am a PhD candidate at the University of Waterloo, working under the supervision of <strong>Prof. Jimmy Lin</strong>. My research specializes in Information Retrieval, Large Language Models, and Retrieval-Augmented Generation (RAG) systems.</p>
+                    
+                    <p class="about-text">I focus on developing robust evaluation methodologies for LLMs, enhancing retrieval augmentation techniques, and building automated assessment frameworks for information access systems. My recent work explores multimodal evaluation and scalable benchmarks to better understand LLM behavior in diverse, real-world scenarios.</p>
+                    
+                    <p class="about-text">I completed my Bachelor of Technology (BTech) from <strong>Nirma University, Ahmedabad</strong>, where I developed a strong foundation in computer science and began my journey into research.</p>
+                </div> -->
+
+                <div class="section">
+                    <h2>About Me</h2>
+                    <p class="about-text">
+                        I am a PhD candidate at the 
+                        <a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a>, 
+                        working under the supervision of 
+                        <a href="https://cs.uwaterloo.ca/~jimmylin/" target="_blank">Prof. Jimmy Lin</a>. 
+                        My research specializes in Information Retrieval, Large Language Models, and Retrieval-Augmented Generation (RAG) systems.
+                    </p>
+                
+                    <p class="about-text">
+                        I focus on developing robust evaluation methodologies for LLMs, enhancing retrieval augmentation techniques, and building automated assessment frameworks for information access systems. My recent work explores multimodal evaluation and scalable benchmarks to better understand LLM behavior in diverse, real-world scenarios.
+                    </p>
+                
+                    <p class="about-text">
+                        I completed my Bachelor of Technology (BTech) from 
+                        <a href="https://nirmauni.ac.in/" target="_blank">Nirma University, Ahmedabad</a>, 
+                        where I developed a strong foundation in computer science and began my journey into research.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2>Research Interests</h2>
+                    <div class="research-interests">
+                        <ul>
+                            <li><strong>Information Retrieval:</strong> Developing advanced retrieval systems and evaluation methodologies</li>
+                            <li><strong>Large Language Models:</strong> LLM evaluation, robustness, and practical applications</li>
+                            <li><strong>Retrieval-Augmented Generation:</strong> Designing RAG systems for complex, multimodal tasks and applications</li>
+                            <li><strong>Automated Evaluation:</strong> Building frameworks for scalable, automated assessment and fact extraction across text and multimodal content</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="profile-photo">
+                    <img src="assets/profile.jpeg" alt="Shivani Upadhyay">
+                </div>
+                <h3>Contact</h3>
+                <div class="contact-info">
+                    <a href="mailto:shivaniu607@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://scholar.google.com/citations?user=M-UW8CoAAAAJ&hl=en"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                    <a href="https://github.com/UShivani3"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/shivani-upadhyay-414719135"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://x.com/Ushivani3"><i class="fab fa-twitter"></i> Twitter</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
